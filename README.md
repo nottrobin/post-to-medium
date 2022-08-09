@@ -21,10 +21,15 @@ title: Some title or other
 
 I wrote this to cross-posting article from [my own Jekyll blog](https://robinwinslow.uk), in a GitHub workflow (which I may yet publish as an action).
 
-## Publishing to medium.com
+## Installation
 
 ``` bash
 $ pip3 install publish-markdown
+```
+
+## Publishing to medium.com
+
+``` bash
 $ export MEDIUM_TOKEN={your-integration-token}
 $ publish-to-medium _posts/2022-01-01-my-first-post.md --canonical-url="https://my-blog.com/2022/01/02/my-first-post"
 Found user ID: {your-user-id}
