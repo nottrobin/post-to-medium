@@ -1,11 +1,13 @@
 # Publish markdown
 
-Publish articles written in Markdown files to various blogging platforms, including:
+Publish articles written in Markdown files to the following platforms:
 
 - medium.com
+<!--
 - dev.to
 - hashnode.com
-- twitter
+- twitter.com
+-->
 
 Markdown files should include YAML frontmatter with at least a `title`:
 
