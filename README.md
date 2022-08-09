@@ -1,29 +1,39 @@
-# post-to-medium
+# Publish markdown
 
-This package is purely for posting articles to Medium.
+Publish articles written in Markdown files to various blogging platforms, including:
 
-I'm using it t cross-post articles from [my blog](https://robinwinslow.uk) to [my Medium account](https://medium.com/@nottrobin) with a GitHub action.
+- medium.com
+- dev.to
+- hashnode.com
+- twitter
 
-## Installation
+Markdown files should include YAML frontmatter with at least a `title`:
 
-``` bash
-pip3 install post_to_medium
+```
+---
+title: Some title or other
+---
+
+{content in Markdown}
 ```
 
-## Permissions
+I wrote this to cross-posting article from [my own Jekyll blog](https://robinwinslow.uk), in a GitHub workflow (which I may yet publish as an action).
 
-All you really need is an "integration token" from [the Medium settings page](https://medium.com/me/settings), and then provide this with the `MEDIUM_TOKEN` environment variable, e.g.:
+## Publishing to medium.com
 
 ``` bash
-export MEDIUM_TOKEN=<YOUR_TOKEN_GOES_HERE>
+$ pip3 install publish-markdown
+$ export MEDIUM_TOKEN={your-integration-token}
+$ publish-to-medium _posts/2022-01-01-my-first-post.md --canonical-url="https://my-blog.com/2022/01/02/my-first-post"
+Found user ID: {your-user-id}
+- Article posted to https://medium.com/@nottrobin/how-to-use-unix-linkchecker-to-thoroughly-check-any-site-50134f3aeba0
+- Added 'medium.com' to 'posted_to' metadata
 ```
 
-## Usage
+### Optimisations
 
-``` python3
-post_to_medium \
-  --title="A new post" \
-  --body="# A new post\n\nThis is a new post, written in Markdown" \
-  --canonical-url="https://my.blog/a-new-post" \
-  --tag=technology --tag=writing
+You can avoid the code having to retrieve your user ID every time by setting it as an environment variable as well:
+
+``` bash
+export MEDIUM_USER_ID={your-user-id}
 ```
