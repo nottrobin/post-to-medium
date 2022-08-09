@@ -178,7 +178,7 @@ class MarkdownArticle:
         parsed_article = frontmatter.load(self.filepath)
 
         if "published_to" in parsed_article:
-            parsed_article["published_to"]["domain"] = url
+            parsed_article["published_to"][domain] = url
         else:
             parsed_article["published_to"] = {domain: url}
 
