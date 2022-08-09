@@ -1,4 +1,4 @@
-# post_to_medium
+# post-to-medium
 
 This package is purely for posting articles to Medium.
 
