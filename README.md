@@ -3,8 +3,8 @@
 Publish articles written in Markdown files to the following platforms:
 
 - medium.com
-<!--
 - dev.to
+<!--
 - hashnode.com
 - twitter.com
 -->
@@ -34,8 +34,8 @@ $ pip3 install publish-markdown
 $ export MEDIUM_TOKEN={your-integration-token}
 $ publish-to-medium _posts/2022-01-01-my-first-post.md --canonical-url="https://my-blog.com/2022/01/02/my-first-post"
 Found user ID: {your-user-id}
-- Article posted to https://medium.com/@nottrobin/how-to-use-unix-linkchecker-to-thoroughly-check-any-site-50134f3aeba0
-- Added 'medium.com' to 'posted_to' metadata
+- Article published at https://medium.com/@auser/my-first-post-50134f3aeba0
+- Added 'medium.com' to 'published_to' metadata
 ```
 
 ### Optimisations
@@ -44,6 +44,15 @@ You can avoid the code having to retrieve your user ID every time by setting it 
 
 ``` bash
 export MEDIUM_USER_ID={your-user-id}
+```
+
+## Publishing to dev.to
+
+``` bash
+$ export DEV_TO_TOKEN={your-api-token}
+$ publish-to-DEV _posts/2022-01-01-my-first-post.md --canonical-url="https://my-blog.com/2022/01/02/my-first-post"
+- Article published at https://dev.to/auser/my-first-post-74n
+- Added 'dev.to' to 'published_to' metadata
 ```
 
 ## Is cross-posting allowed / a good idea?

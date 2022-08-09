@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name="publish-markdown",
-    version="0.1.0",
+    version="0.2.0",
     author="Robin Winslow",
     author_email="robin@robinwinslow.co.uk",
     url="https://github.com/nottrobin/publish-markdown",
@@ -19,5 +19,8 @@ setup(
         "requests>=2.28.1",
         "python-frontmatter>=1.0.0"
     ],
-    scripts=["publish-to-medium"],
+    scripts=[
+        "publish-to-medium",
+        "publish-to-DEV"
+    ],
 )

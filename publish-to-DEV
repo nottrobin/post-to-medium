@@ -4,17 +4,17 @@
 import argparse
 
 # Local
-from publish_markdown import markdown_to_medium
+from publish_markdown import markdown_to_DEV
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Post an article to medium.com'
+        description='Post an article to dev.to'
     )
 
     parser.add_argument(
         "filepath",
-        help='The path to the markdown containing the article to post medium.com'
+        help='The path to the markdown containing the article to post dev.to'
     )
 
     parser.add_argument(
@@ -23,7 +23,7 @@ def main():
     )
     args = vars(parser.parse_args())
 
-    markdown_to_medium(**args)
+    markdown_to_DEV(**args)
 
 
 if __name__ == '__main__':
