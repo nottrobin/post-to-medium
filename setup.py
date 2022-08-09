@@ -8,9 +8,10 @@ setup(
     version="0.1.0",
     author="Robin Winslow",
     author_email="robin@robinwinslow.co.uk",
-    url="https://github.com/nottrobin/post-to-medium",
+    url="https://github.com/nottrobin/publish-markdown",
     description=(
-        "For posting articles to Medium"
+        "Publish articles written in Markdown files "
+        "to medium.com, dev.to, hashnode and twitter"
     ),
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
