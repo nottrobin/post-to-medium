@@ -1,0 +1,46 @@
+#! /usr/bin/env python3
+
+# Standard library
+import argparse
+
+# Local
+from api import Medium
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description='Post an article to medium'
+    )
+
+    required = parser.add_argument_group('Required arguments')
+    optional = parser.add_argument_group('Optional arguments')
+
+    required.add_argument(
+        '-t', '--title',
+        help='The meta title of the article',
+        required=True
+    )
+    required.add_argument(
+        '-b', '--body',
+        help='The body of the article, in Markdown format (including title)',
+        required=True
+    )
+
+    optional.add_argument(
+        '-c', '--canonical-url',
+        help="The canonical URL of the post (e.g. on your own blog)",
+    )
+    optional.add_argument(
+        '-a', '--tags',
+        nargs="*",
+        help=f'Tags for the article'
+    )
+    args = vars(parser.parse_args())
+
+    response = Medium().post_article(**args)
+    posted_url = response.json()["data"]["url"]
+    print(f"Posted to: { posted_url }")
+
+
+if __name__ == '__main__':
+    main()
