@@ -9,17 +9,18 @@ Publish articles written in Markdown files to the following platforms:
 - twitter.com
 -->
 
-Markdown files should include YAML frontmatter with at least a `title`:
+Markdown files should include YAML frontmatter with at least a `title`. Adding `tags` will help your posts reach a wider audience on the target platforms:
 
 ```
 ---
 title: Some title or other
+tags: ["webdev", "writing"]
 ---
 
 {content in Markdown}
 ```
 
-I wrote this to cross-posting article from [my own Jekyll blog](https://robinwinslow.uk), in a GitHub workflow (which I may yet publish as an action).
+I wrote this to cross-post article from [my own Jekyll blog](https://robinwinslow.uk), in a GitHub workflow (which I may yet publish as an action).
 
 ## Installation
 
@@ -44,3 +45,11 @@ You can avoid the code having to retrieve your user ID every time by setting it 
 ``` bash
 export MEDIUM_USER_ID={your-user-id}
 ```
+
+## Is cross-posting allowed / a good idea?
+
+Cross-posting to extra platforms gets your post to be seen by more communities. This is mostly a good thing - people in one community are unlikely to also be in another simultaneously. 
+
+While plainly duplicating content on the internet is not generally a good idea, cross-posting or syndicating is fine where it's done right. Dev.to, Medium and Hashnode all explicitly support cross-posting, by providing the ability to set a `rel=canonical` meta tag inside their posts. And [Google explicitly mention](https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls) syndication of articles as a legitimate use of the `rel=canonical` tag.
+
+So yes, cross-posting is a good idea.
